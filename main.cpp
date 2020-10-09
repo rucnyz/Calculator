@@ -24,12 +24,12 @@ int vectorCalculation()
 		string firstArr;
 		string secondArr;
 		cout << "请输入第一个向量(请使用,或;进行分割):" << endl;
-		//getline(cin, firstArr);
-		firstArr = "1,2,3,4,5";
+		getline(cin, firstArr);
+		//firstArr = "1,2,3,4,5";
 		cout << "请输入第二个向量(请使用,或;进行分割):" << endl;
 
-		//getline(cin, secondArr);
-		secondArr = "2,3,4,5,6";
+		getline(cin, secondArr);
+		//secondArr = "2,3,4,5,6";
 
 		initList(First, firstArr, 1);
 		initList(Second, secondArr, 1);
@@ -90,13 +90,13 @@ int polyCalculation()
 		string firstArr;
 		string secondArr;
 		cout << "请输入第一个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
-		//getline(cin, firstArr);
-		firstArr = "x^4+x^2+3";
+		getline(cin, firstArr);
+		//firstArr = "x^4+x^2+3";
 		cout << "请输入第二个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
 
-		//getline(cin, secondArr);
-		secondArr = "x^4+x^1+4";
-		if (flag[0] == '1')
+		getline(cin, secondArr);
+		//secondArr = "x^4+x^1+4";
+		if (flag[0] == '1' || (flag[0] == '2' && Expression[0] == '*'))
 		{
 			LinearList Second{};
 			LinearList Result{};
@@ -158,12 +158,12 @@ int polyCalculation()
 		getline(cin, str);
 		if (flag[0] == '1')
 		{
-			LinearList input{},result{};
-			initList(input,str, 2);
+			LinearList input{}, result{};
+			initList(input, str, 2);
 			cout << "其导数为:" << endl;
 			result = grad(input);
 			polyDisplay(result);
-			cout <<endl;
+			cout << endl;
 		}
 		else if (flag[0] == '2')
 		{

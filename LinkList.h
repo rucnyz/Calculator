@@ -7,15 +7,18 @@
  */
 
 
-#ifndef CACULATOR_LINKLIST_H
-#define CACULATOR_LINKLIST_H
+#ifndef CALCULATOR_LINKLIST_H
+#define CALCULATOR_LINKLIST_H
 
 #include "utilities.h"
 
 void init(LinkList **L);
+
 void initList(LinkList **L, string &expression);
+
 void polyCal(LinkList **first, LinkList **second, LinkList **result, char c);
+
 void grad(LinkList **input);
 
 
-#endif //CACULATOR_LINKLIST_H
+#endif //CALCULATOR_LINKLIST_H

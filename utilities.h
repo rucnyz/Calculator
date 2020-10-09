@@ -30,6 +30,7 @@ struct LinkList
 };
 
 void parser(vector<string> &splited, LinearList &mainList);
+
 void parser(vector<string> &splited, LinkList ***mainList);
 
 
