@@ -187,6 +187,7 @@ void parser(vector<string> &splited, LinkList ***mainList)
 /// \param input
 void polyDisplay(LinearList &input)
 {
+	int flag = 1;
 	for (int i = 0; i < input.length; ++i)
 	{
 		//判断结果是否为'1'(特殊情况)
@@ -208,7 +209,14 @@ void polyDisplay(LinearList &input)
 			//是否省略系数
 			if (input.data[i].parameter != 1)
 			{
-				cout << input.data[i].parameter;
+				if (input.data[i].parameter == -1)
+				{
+					cout << "-";
+				}
+				else
+				{
+					cout << input.data[i].parameter;
+				}
 			}
 			//是否省略指数
 			if (input.data[i].power == 1)
@@ -224,7 +232,11 @@ void polyDisplay(LinearList &input)
 		{
 			cout << "+";
 		}
-
+		flag = 0;
+	}
+	if (flag)
+	{
+		cout << "0";
 	}
 }
 
@@ -232,6 +244,7 @@ void polyDisplay(LinearList &input)
 /// \param input
 void polyDisplay(LinkList *input)
 {
+	int flag = 1;
 	while (input->next != nullptr)
 	{
 		input = input->next;
@@ -253,7 +266,14 @@ void polyDisplay(LinkList *input)
 			//是否省略系数
 			if (input->data.parameter != 1)
 			{
-				cout << input->data.parameter;
+				if (input->data.parameter == -1)
+				{
+					cout << "-";
+				}
+				else
+				{
+					cout << input->data.parameter;
+				}
 			}
 			//是否省略指数
 			if (input->data.power == 1)
@@ -269,7 +289,11 @@ void polyDisplay(LinkList *input)
 		{
 			cout << "+";
 		}
-
+		flag = 0;
+	}
+	if (flag)
+	{
+		cout << "0";
 	}
 }
 

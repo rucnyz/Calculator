@@ -102,6 +102,11 @@ void polyCal(LinkList **first, LinkList **second, LinkList **result, char c)
 
 void grad(LinkList **input)
 {
+	if ((*input)->data.power == 0)
+	{
+		(*input)->data.parameter = 0;
+		return;
+	}
 	(*input)->data.parameter = (*input)->data.parameter * (*input)->data.power;
 	(*input)->data.power = (*input)->data.power - 1;
 	while ((*input)->next != nullptr)

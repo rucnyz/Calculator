@@ -222,6 +222,12 @@ LinearList grad(LinearList &input)
 	LinearList result{};
 	result.length = input.length;
 	result.data = (Data *) malloc(result.length * sizeof(input.data[0]));
+	if (input.length == 1 && input.data[0].power == 0)
+	{
+		result.data[0].parameter = 0;
+		result.data[0].power = 0;
+		return result;
+	}
 	for (int i = 0; i < input.length; ++i)
 	{
 		if (input.data[i].power == 0)
