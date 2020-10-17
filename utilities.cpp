@@ -118,7 +118,7 @@ void parser(vector<string> &splited, LinearList &mainList)
 /// \param mainList
 
 
-void parser(vector<string> &splited, LinkList ***mainList)
+void parser(vector<string> &splited, LinkList *&mainList)
 {
 	for (auto i = splited.begin(); i < splited.end(); ++i)
 	{
@@ -172,13 +172,13 @@ void parser(vector<string> &splited, LinkList ***mainList)
 				power = 1;
 			}
 		}
-		(**mainList)->data.parameter = parameter;
-		(**mainList)->data.power = power;
-		if ((**mainList)->next == nullptr && i < splited.end() - 1)
+		mainList->data.parameter = parameter;
+		mainList->data.power = power;
+		if (mainList->next == nullptr && i < splited.end() - 1)
 		{
-			(**mainList)->next = (LinkList *) malloc(sizeof(LinkList));
-			(**mainList) = (**mainList)->next;
-			(**mainList)->next = nullptr;
+			mainList->next = (LinkList *) malloc(sizeof(LinkList));
+			mainList = mainList->next;
+			mainList->next = nullptr;
 		}
 	}
 }
@@ -242,7 +242,7 @@ void polyDisplay(LinearList &input)
 
 ///
 /// \param input
-void polyDisplay(LinkList *input)
+void polyDisplay(LinkList *&input)
 {
 	int flag = 1;
 	while (input->next != nullptr)

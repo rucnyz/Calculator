@@ -11,14 +11,17 @@
 #define CALCULATOR_LINKLIST_H
 
 #include "utilities.h"
+#include <queue>
 
-void init(LinkList **L);
+void init(LinkList *&L);
 
-void initList(LinkList **L, string &expression);
+void initList(LinkList *&L, string &expression);
 
-void polyCal(LinkList **first, LinkList **second, LinkList **result, char c);
+void polyCal(LinkList *&first, LinkList *&second, LinkList *&result, char c);
 
-void grad(LinkList **input);
+void polyPlus(LinkList *&first, LinkList *&second, LinkList *&result);
+
+void grad(LinkList *&input);
 
 
 #endif //CALCULATOR_LINKLIST_H

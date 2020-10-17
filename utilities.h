@@ -31,14 +31,14 @@ struct LinkList
 
 void parser(vector<string> &splited, LinearList &mainList);
 
-void parser(vector<string> &splited, LinkList ***mainList);
+void parser(vector<string> &splited, LinkList *&mainList);
 
 
 vector<string> split(string &expression, char c1, char c2 = '\0');
 
 void polyDisplay(LinearList &input);
 
-void polyDisplay(LinkList *input);
+void polyDisplay(LinkList *&input);
 
 void vecDisplay(LinearList &input);
 

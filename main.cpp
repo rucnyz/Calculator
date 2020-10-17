@@ -90,13 +90,13 @@ int polyCalculation()
 		string firstArr;
 		string secondArr;
 		cout << "请输入第一个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
-		getline(cin, firstArr);
-		//firstArr = "x^4+x^2+3";
+		//getline(cin, firstArr);
+		firstArr = "x^4+x^2+3";
 		cout << "请输入第二个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
 
-		getline(cin, secondArr);
-		//secondArr = "x^4+x^1+4";
-		if (flag[0] == '1' || (flag[0] == '2' && Expression[0] == '*'))
+		//getline(cin, secondArr);
+		secondArr = "x^4+x^1+4";
+		if (flag[0] == '1')
 		{
 			LinearList Second{};
 			LinearList Result{};
@@ -123,27 +123,27 @@ int polyCalculation()
 			LinkList *resultHead;
 
 			//给链表开辟空间
-			init(&firstHead);
-			init(&secondHead);
-			init(&resultHead);
+			init(firstHead);
+			init(secondHead);
+			init(resultHead);
 
 			//拼接两个链表的头结点
-			init(&first);
+			init(first);
 			firstHead->next = first;
-			init(&second);
+			init(second);
 			secondHead->next = second;
 
 			//拼接结果的头结点
-			init(&result);
+			init(result);
 			resultHead->next = result;
 			//将字符串的内容写入链表
-			initList(&first, firstArr);
-			initList(&second, secondArr);
+			initList(first, firstArr);
+			initList(second, secondArr);
 
 			//计算
 			firstHead = firstHead->next;
 			secondHead = secondHead->next;
-			polyCal(&firstHead, &secondHead, &result, Expression[0]);
+			polyCal(firstHead, secondHead, result, Expression[0]);
 
 			//输出结果
 			cout << "结果是:" << endl;
@@ -167,19 +167,16 @@ int polyCalculation()
 		}
 		else if (flag[0] == '2')
 		{
-			LinkList *resultHead = nullptr;
-			LinkList *resultH = nullptr;
-			LinkList *result = nullptr;
-			init(&resultHead);
-			init(&result);
-			init(&resultH);
-			resultHead->next = result;
-			resultH = result;
-			initList(&result, str);
-
-			grad(&resultH);
+			LinkList *inputHead = nullptr;
+			LinkList *input = nullptr;
+			init(inputHead);
+			init(input);
+			inputHead->next = input;
+			initList(input, str);
+			input = inputHead->next;
+			grad(input);
 			cout << "其导数为:" << endl;
-			polyDisplay(resultHead);
+			polyDisplay(inputHead);
 			cout << endl;
 		}
 	}
