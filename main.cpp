@@ -90,12 +90,12 @@ int polyCalculation()
 		string firstArr;
 		string secondArr;
 		cout << "请输入第一个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
-		//getline(cin, firstArr);
-		firstArr = "x^4+x^2+3";
+		getline(cin, firstArr);
+		//firstArr = "x^4+x^2+3";
 		cout << "请输入第二个多项式:(请使用x作为变量且按照从大到小的顺序)" << endl;
 
-		//getline(cin, secondArr);
-		secondArr = "x^4+x^1+4";
+		getline(cin, secondArr);
+		//secondArr = "x^4+x^1+4";
 		if (flag[0] == '1')
 		{
 			LinearList Second{};
